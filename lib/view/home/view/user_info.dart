@@ -21,37 +21,7 @@ class HomePageUserInfo extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
-              child: Stack(
-                children: [
-                  SizedBox(
-                    height: 120.w,
-                    width: 120.w,
-                    child: RotationTransition(
-                      turns: AlwaysStoppedAnimation(225 / 360),
-                      child: CircularProgressIndicator(
-                        
-                        color: grey,
-                        value: .75,
-                        strokeWidth: 8,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 120.w,
-                    width: 120.w,
-                    child: RotationTransition(
-                      turns: AlwaysStoppedAnimation(225 / 360),
-                      child: CircularProgressIndicator(
-                        color: darkGreen,
-                        value: .50,
-                        strokeWidth: 13,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            buildCoffeeProgress(context),
             SizedBox(
               height: 145.h,
               child: Column(
@@ -81,6 +51,59 @@ class HomePageUserInfo extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  SizedBox buildCoffeeProgress(BuildContext context) {
+    return SizedBox(
+            child: Stack(
+              children: [
+                SizedBox(
+                  height: 120.w,
+                  width: 120.w,
+                  child: const RotationTransition(
+                    turns: AlwaysStoppedAnimation(225 / 360),
+                    child: CircularProgressIndicator(
+                      color: grey,
+                      value: .75,
+                      strokeWidth: 8,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 120.w,
+                  width: 120.w,
+                  child: const RotationTransition(
+                    turns: AlwaysStoppedAnimation(225 / 360),
+                    child: CircularProgressIndicator(
+                      color: darkGreen,
+                      value: .50,
+                      strokeWidth: 13,
+                    ),
+                  ),
+                ),
+                Positioned(
+                  left: 30.w,
+                  top: 30.h,
+                  child: Image.asset(
+                    UIcon().CUP,
+                    width: 60.w,
+                    height: 60.w,
+                  ),
+                ),
+                Positioned(
+                  left: 45.w,
+                  bottom: 0.h,
+                  child: Text(
+                    "6/15",
+                    style: Theme.of(context)
+                        .textTheme
+                        .headline4!
+                        .copyWith(color: darkGreen),
+                  ),
+                ),
+              ],
+            ),
+          );
   }
 
   Column buildUserMoneyAndCoffeSmallContainer(BuildContext context,
