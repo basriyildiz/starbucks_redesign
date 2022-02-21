@@ -28,6 +28,7 @@ final ThemeData lightTheme = ThemeData(
     selectedIconTheme: IconThemeData(color: mainGreen),
   ),
   buttonTheme: const ButtonThemeData(buttonColor: mainGreen),
+
   textTheme: lightTextTheme,
   inputDecorationTheme: const InputDecorationTheme(
     fillColor: white,
