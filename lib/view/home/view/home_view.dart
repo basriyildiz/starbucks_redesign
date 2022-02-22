@@ -5,6 +5,7 @@ import 'package:starbucks_redesign/core/constants/image_paths.dart';
 import 'package:starbucks_redesign/core/extension/padding_extension.dart';
 import 'package:starbucks_redesign/view/home/view/user_info.dart';
 import 'package:starbucks_redesign/view/widgets/app_bar.dart';
+import 'package:starbucks_redesign/view/widgets/sliver_app_bar.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -13,6 +14,7 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(appBarTitle: "Starbucks"),
       body: CustomScrollView(
+        physics: BouncingScrollPhysics(),
         slivers: [
           SliverToBoxAdapter(
             child: Padding(
@@ -49,23 +51,7 @@ class HomeView extends StatelessWidget {
               ),
             ),
           ),
-          SliverAppBar(
-            pinned: true,
-            automaticallyImplyLeading: false,
-            title: Row(
-              children: [
-                SizedBox(width: 10.w),
-                Text(
-                  "Kampanyalar",
-                  style: Theme.of(context)
-                      .textTheme
-                      .headline4!
-                      .copyWith(color: dark),
-                ),
-              ],
-            ),
-            //      backgroundColor: Colors.transparent,
-          ),
+          CustomSliverAppBar(context: context, sliverTitle: "Kampanyalar"),
           SliverList(
             delegate: SliverChildBuilderDelegate(
               (BuildContext context, int index) {

@@ -5,15 +5,19 @@ import 'package:starbucks_redesign/core/constants/icon_path.dart';
 
 class CustomAppBar extends AppBar {
   CustomAppBar({Key? key, required this.appBarTitle})
-      : super(key: key, title: Text(appBarTitle), actions: [
-          InkWell(
-              borderRadius: BorderRadius.circular(50.w),
-              onTap: () {},
-              child: Image.asset(UIcon().BELL, color: darkGreen)),
-          InkWell(
-              borderRadius: BorderRadius.circular(50.w),
-              onTap: () {},
-              child: Image.asset(UIcon().SETTING, color: darkGreen)),
-        ]);
+      : super(
+            key: key,
+            automaticallyImplyLeading: false,
+            title: Text(appBarTitle),
+            actions: [
+              InkWell(
+                  borderRadius: BorderRadius.circular(50.w),
+                  onTap: () {},
+                  child: Image.asset(UIcon().BELL, color: darkGreen)),
+              InkWell(
+                  borderRadius: BorderRadius.circular(50.w),
+                  onTap: () {},
+                  child: Image.asset(UIcon().SETTING, color: darkGreen)),
+            ]);
   final String appBarTitle;
 }

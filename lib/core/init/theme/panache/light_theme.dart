@@ -34,7 +34,8 @@ final ThemeData lightTheme = ThemeData(
     fillColor: white,
     filled: true,
     border: OutlineInputBorder(
-      borderSide: BorderSide(color: lightGrey, width: 1),
+      borderSide:
+          BorderSide(color: buttonGrey, width: 1, style: BorderStyle.solid),
     ),
   ),
 );
