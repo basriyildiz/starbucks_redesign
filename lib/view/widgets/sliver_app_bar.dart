@@ -4,10 +4,13 @@ import 'package:starbucks_redesign/core/constants/colors.dart';
 
 class CustomSliverAppBar extends SliverAppBar {
   CustomSliverAppBar(
-      {Key? key, required this.context, required this.sliverTitle})
+      {Key? key,
+      required this.context,
+      required this.sliverTitle,
+      this.isPinned = true})
       : super(
           key: key,
-          pinned: true,
+          pinned: isPinned,
           automaticallyImplyLeading: false,
           title: Row(
             children: [
@@ -22,6 +25,7 @@ class CustomSliverAppBar extends SliverAppBar {
             ],
           ),
         );
+  final bool isPinned;
   final String sliverTitle;
   final BuildContext context;
 }

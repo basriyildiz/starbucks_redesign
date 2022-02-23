@@ -66,7 +66,7 @@ class OrderDetailsView extends StatelessWidget {
             ),
           ),
           child: Padding(
-            padding: context.paddingNormalAll,
+            padding: const EdgeInsets.all(14),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,

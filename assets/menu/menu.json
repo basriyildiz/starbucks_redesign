@@ -1,0 +1,95 @@
+[
+    {
+        "itemNo": 1,
+        "name": "Hazelnut Coffee",
+        "price": 19.95,
+        "imagePath": "assets/images/c1.png",
+        "categories": [
+            0,
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "itemNo": 2,
+        "name": "Mocha Frappuccino",
+        "price": 17.95,
+        "imagePath": "assets/images/c2.png",
+        "categories": [
+            0,
+            6,
+            2,
+            3
+        ]
+    },
+    {
+        "itemNo": 3,
+        "name": "Espresso Frappuccino",
+        "price": 21.95,
+        "imagePath": "assets/images/c3.png",
+        "categories": [
+            0,
+            2,
+            3
+        ]
+    },
+    {
+        "itemNo": 4,
+        "name": "Caramel Frappucino",
+        "price": 14.95,
+        "imagePath": "assets/images/c4.png",
+        "categories": [
+            1,
+            4,
+            0
+        ]
+    },
+    {
+        "itemNo": 1,
+        "name": "Hazelnut Coffee",
+        "price": 19.95,
+        "imagePath": "assets/images/c1.png",
+        "categories": [
+            1,
+            2,
+            0,
+            3
+        ]
+    },
+    {
+        "itemNo": 1,
+        "name": "Hazelnut Coffee",
+        "price": 19.95,
+        "imagePath": "assets/images/c1.png",
+        "categories": [
+            0,
+            1,
+            4,
+            3
+        ]
+    },
+    {
+        "itemNo": 1,
+        "name": "Hazelnut Coffee",
+        "price": 19.95,
+        "imagePath": "assets/images/c1.png",
+        "categories": [
+            1,
+            4,
+            3,
+            0
+        ]
+    },
+    {
+        "itemNo": 1,
+        "name": "Hazelnut Coffee",
+        "price": 19.95,
+        "imagePath": "assets/images/c1.png",
+        "categories": [
+            4,
+            2,
+            0
+        ]
+    }
+]
