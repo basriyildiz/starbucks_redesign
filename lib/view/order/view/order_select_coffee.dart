@@ -3,94 +3,86 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:starbucks_redesign/core/constants/colors.dart';
 import 'package:starbucks_redesign/core/extension/padding_extension.dart';
+import 'package:starbucks_redesign/view/order/model/order_coffee_sizes_enum.dart';
 import 'package:starbucks_redesign/view/order/model/order_model.dart';
+import 'package:starbucks_redesign/view/order/view/order_to_complete.dart';
 import 'package:starbucks_redesign/view/order/viewmodel/order_viewmodel.dart';
 
 class OrderSelectCoffeeBottomSheet extends StatelessWidget {
   OrderSelectCoffeeBottomSheet(
-      {Key? key, required this.index, required this.menuItems})
+      {Key? key,
+      required this.index,
+      required this.menuItems,
+      required this.setState})
       : super(key: key);
   final int index;
   final List<OrderModel> menuItems;
+  final setState;
   @override
   Widget build(BuildContext context) {
     var controller = Get.find<OrderViewmodel>();
-    return ElevatedButton(
-      onPressed: () {
-        showModalBottomSheet(
-          context: context,
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(10.w),
-            topRight: Radius.circular(10.w),
-          )),
-          builder: (context) => StatefulBuilder(
-            builder: (context, setState) => Container(
-              /* decoration: BoxDecoration(
-                                      borderRadius:
-                                          BorderRadius.circular(24.w)), */
-              height: 180.h,
-              child: Padding(
-                padding: context.paddingNormalAll,
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        buildMenuItemsCircularImage(index),
-                        Padding(
-                          padding: context.paddingLowAll,
-                          child: buildMenuItemInfo(index, context),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 12.h),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        buildGreyContainer(
-                            Center(
-                              child: buildCoffeAddButton(
-                                  controller, setState, context),
-                            ),
-                            150.w),
-                        buildGreyContainer(
-                          buildPopupMenu(
-                            context: context,
-                            controller: controller,
-                            setState: setState,
-                          ),
-                          130.w,
-                        ),
-                        Container(
-                          height: 40.h,
-                          width: 40.h,
-                          decoration: BoxDecoration(
-                            color: mainGreen,
-                            borderRadius: BorderRadius.circular(4.w),
-                          ),
-                          child: IconButton(
-                              iconSize: 20.h,
-                              color: white,
-                              onPressed: () {
-                                debugPrint("Size: " +
-                                    controller.selectedCoffeeSize.toString() +
-                                    " | Number: " +
-                                    controller.coffeeNumber.toString());
-                              },
-                              icon: Icon(Icons.done_rounded)),
-                        ),
-                      ],
-                    ),
-                  ],
+    return Container(
+      height: 180.h,
+      child: Padding(
+        padding: context.paddingNormalAll,
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                buildMenuItemsCircularImage(index),
+                Padding(
+                  padding: context.paddingLowAll,
+                  child: buildMenuItemInfo(index, context),
                 ),
-              ),
+              ],
             ),
-          ),
-        );
-      },
-      child: Text("Ekle"),
+            SizedBox(height: 12.h),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                buildGreyContainer(
+                    Center(
+                      child: buildCoffeAddButton(controller, setState, context),
+                    ),
+                    150.w),
+                buildGreyContainer(
+                  buildPopupMenu(
+                    context: context,
+                    controller: controller,
+                    setState: setState,
+                  ),
+                  130.w,
+                ),
+                Container(
+                  height: 40.h,
+                  width: 40.h,
+                  decoration: BoxDecoration(
+                    color: mainGreen,
+                    borderRadius: BorderRadius.circular(4.w),
+                  ),
+                  child: IconButton(
+                      iconSize: 20.h,
+                      color: white,
+                      onPressed: () {
+                        var model = OrderModelForAddToBasket(
+                            otherInfo: menuItems[index],
+                            itemNo: menuItems[index].itemNo,
+                            number: controller.coffeeNumber.value,
+                            size: controller.selectedCoffeeSize.value);
+
+                        controller.orders.add(model);
+
+                        Get.to(OrderToComplete());
+                      },
+                      icon: Icon(Icons.done_rounded)),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
     );
   }
 

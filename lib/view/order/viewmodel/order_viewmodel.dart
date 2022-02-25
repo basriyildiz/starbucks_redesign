@@ -4,10 +4,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:starbucks_redesign/view/order/model/order_categories.dart';
+import 'package:starbucks_redesign/view/order/model/order_coffee_sizes_enum.dart';
 import 'package:starbucks_redesign/view/order/model/order_model.dart';
 
 enum OrderViewModelStatus { LOADING, ERROR, DONE }
-enum CoffeSizes { SHORT, TALL, GRANDE, VENTI }
 
 class OrderViewmodel extends GetxController {
   @override
@@ -29,6 +29,9 @@ class OrderViewmodel extends GetxController {
   late List<OrderModel> menu;
   var coffeeNumber = 1.obs;
   var selectedCoffeeSize = CoffeSizes.TALL.obs;
+  var isSelected = false.obs;
+
+  var orders = [].obs;
 
   Map<CoffeSizes, String> coffeeSizeString = {
     CoffeSizes.SHORT: "Short",

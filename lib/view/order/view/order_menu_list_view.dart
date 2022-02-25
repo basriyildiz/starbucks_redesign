@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:starbucks_redesign/core/constants/colors.dart';
 import 'package:starbucks_redesign/core/extension/padding_extension.dart';
+import 'package:starbucks_redesign/view/order/model/order_coffee_sizes_enum.dart';
 import 'package:starbucks_redesign/view/order/model/order_model.dart';
 import 'package:starbucks_redesign/view/order/view/order_select_coffee.dart';
 import 'package:starbucks_redesign/view/order/viewmodel/order_viewmodel.dart';
@@ -43,9 +44,28 @@ class OrderMenuListView extends StatelessWidget {
                     Align(
                       alignment: Alignment.bottomRight,
                       child: SizedBox(
-                          height: 30.h,
-                          child: OrderSelectCoffeeBottomSheet(
-                              index: index, menuItems: menuItems)),
+                        height: 30.h,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            showModalBottomSheet(
+                              context: context,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(10.w),
+                                topRight: Radius.circular(10.w),
+                              )),
+                              builder: (context) => StatefulBuilder(
+                                builder: (context, setState) =>
+                                    OrderSelectCoffeeBottomSheet(
+                                        index: index,
+                                        menuItems: menuItems,
+                                        setState: setState),
+                              ),
+                            );
+                          },
+                          child: Text("Ekle"),
+                        ),
+                      ),
                     ),
                   ],
                 ),

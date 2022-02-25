@@ -37,7 +37,7 @@
     {
         "itemNo": 4,
         "name": "Caramel Frappucino",
-        "price": 14.95,
+        "price": 17.95,
         "imagePath": "assets/images/c4.png",
         "categories": [
             1,
@@ -46,9 +46,9 @@
         ]
     },
     {
-        "itemNo": 1,
+        "itemNo": 5,
         "name": "Hazelnut Coffee",
-        "price": 19.95,
+        "price": 16.95,
         "imagePath": "assets/images/c1.png",
         "categories": [
             1,
@@ -58,9 +58,9 @@
         ]
     },
     {
-        "itemNo": 1,
-        "name": "Hazelnut Coffee",
-        "price": 19.95,
+        "itemNo": 6,
+        "name": "Lorem Coffee",
+        "price": 14.95,
         "imagePath": "assets/images/c1.png",
         "categories": [
             0,
@@ -70,9 +70,9 @@
         ]
     },
     {
-        "itemNo": 1,
-        "name": "Hazelnut Coffee",
-        "price": 19.95,
+        "itemNo": 7,
+        "name": "Ipsum Coffee",
+        "price": 12.95,
         "imagePath": "assets/images/c1.png",
         "categories": [
             1,
@@ -82,9 +82,9 @@
         ]
     },
     {
-        "itemNo": 1,
+        "itemNo": 8,
         "name": "Hazelnut Coffee",
-        "price": 19.95,
+        "price": 12.95,
         "imagePath": "assets/images/c1.png",
         "categories": [
             4,

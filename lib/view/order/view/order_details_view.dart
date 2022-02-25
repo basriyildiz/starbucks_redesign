@@ -25,8 +25,7 @@ class OrderDetailsView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Gel Al Seçimi  " +
-                    controller.selectedCategory.value.toString(),
+                "Gel Al Seçimi",
                 style: Theme.of(context)
                     .textTheme
                     .headline4!

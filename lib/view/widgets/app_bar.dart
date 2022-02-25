@@ -4,10 +4,13 @@ import 'package:starbucks_redesign/core/constants/colors.dart';
 import 'package:starbucks_redesign/core/constants/icon_path.dart';
 
 class CustomAppBar extends AppBar {
-  CustomAppBar({Key? key, required this.appBarTitle})
-      : super(
+  CustomAppBar({
+    this.hideLeadingBackButton = true,
+    Key? key,
+    required this.appBarTitle,
+  }) : super(
             key: key,
-            automaticallyImplyLeading: false,
+            automaticallyImplyLeading: !hideLeadingBackButton,
             title: Text(appBarTitle),
             actions: [
               InkWell(
@@ -20,4 +23,5 @@ class CustomAppBar extends AppBar {
                   child: Image.asset(UIcon().SETTING, color: darkGreen)),
             ]);
   final String appBarTitle;
+  final bool hideLeadingBackButton;
 }

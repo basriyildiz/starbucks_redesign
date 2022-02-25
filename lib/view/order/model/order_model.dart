@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:starbucks_redesign/view/order/model/order_categories.dart';
+import 'package:starbucks_redesign/view/order/model/order_coffee_sizes_enum.dart';
 
 List<OrderModel> OrderModelFromJson(String str) =>
     List<OrderModel>.from(json.decode(str).map((x) => OrderModel.fromJson(x)));
@@ -41,5 +42,36 @@ class OrderModel {
       "categories": categories,
       "itemNo": itemNo,
     };
+  }
+}
+
+class OrderModelForAddToBasket {
+  final int itemNo;
+  final int number;
+  final CoffeSizes size;
+  final OrderModel otherInfo;
+
+  OrderModelForAddToBasket({
+    required this.itemNo,
+    required this.number,
+    required this.size,
+    required this.otherInfo,
+  });
+
+  toMap() {
+    return {
+      "itemNo": itemNo,
+      "number": number,
+      "size": size,
+      "otherInfo": otherInfo,
+    };
+  }
+
+  factory OrderModelForAddToBasket.fromMap(var map) {
+    return OrderModelForAddToBasket(
+        itemNo: map["itemNo"],
+        number: map["number"],
+        size: map["size"],
+        otherInfo: map["otherInfo"]);
   }
 }
