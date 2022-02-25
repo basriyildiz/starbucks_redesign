@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:starbucks_redesign/core/constants/colors.dart';
 import 'package:starbucks_redesign/core/extension/padding_extension.dart';
 import 'package:starbucks_redesign/view/order/model/order_model.dart';
+import 'package:starbucks_redesign/view/order/view/order_select_coffee.dart';
 import 'package:starbucks_redesign/view/order/viewmodel/order_viewmodel.dart';
 
 class OrderMenuListView extends StatelessWidget {
@@ -33,48 +34,18 @@ class OrderMenuListView extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Container(
-                      height: 70.h,
-                      width: 70.h,
-                      decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: AssetImage(menuItems[index].imagePath))),
-                    ),
+                    buildMenuItemsCircularImage(index),
                     Padding(
                       padding: context.paddingLowAll,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            menuItems[index].name,
-                            style: Theme.of(context)
-                                .textTheme
-                                .headline3!
-                                .copyWith(color: dark),
-                          ),
-                          SizedBox(height: 5.h),
-                          Text(
-                            menuItems[index].price.toString(),
-                            style: Theme.of(context)
-                                .textTheme
-                                .headline5!
-                                .copyWith(color: dark),
-                          ),
-                        ],
-                      ),
+                      child: buildMenuItemInfo(index, context),
                     ),
                     Spacer(),
                     Align(
                       alignment: Alignment.bottomRight,
                       child: SizedBox(
-                        height: 30.h,
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          child: Text("Ekle"),
-                        ),
-                      ),
+                          height: 30.h,
+                          child: OrderSelectCoffeeBottomSheet(
+                              index: index, menuItems: menuItems)),
                     ),
                   ],
                 ),
@@ -83,6 +54,35 @@ class OrderMenuListView extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+
+  Container buildMenuItemsCircularImage(int index) {
+    return Container(
+      height: 70.h,
+      width: 70.h,
+      decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          image: DecorationImage(
+              fit: BoxFit.cover,
+              image: AssetImage(menuItems[index].imagePath))),
+    );
+  }
+
+  Column buildMenuItemInfo(int index, BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          menuItems[index].name,
+          style: Theme.of(context).textTheme.headline3!.copyWith(color: dark),
+        ),
+        SizedBox(height: 5.h),
+        Text(
+          menuItems[index].price.toString(),
+          style: Theme.of(context).textTheme.headline5!.copyWith(color: dark),
+        ),
+      ],
     );
   }
 }
