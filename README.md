@@ -1,8 +1,17 @@
 # starbucks_redesign
 
-A new Flutter project.
+Starbucks Redesign Y
 
 ![Screenshot](Screenshot_1646055492.png)
+![Screenshot](Screenshot_1646055501.png)
+![Screenshot](Screenshot_1646055509.png)
+![Screenshot](Screenshot_1646055512.png)
+![Screenshot](Screenshot_1646055525.png)
+![Screenshot](Screenshot_1646055530.png)
+![Screenshot](Screenshot_1646055953.png)
+
+
+
 
 ## Getting Started
 
