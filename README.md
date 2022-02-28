@@ -1,7 +1,9 @@
 # starbucks_redesign
 
 Starbucks Redesign
-<video src='https://streamable.com/xla1ow' width=180/>
+
+
+https://user-images.githubusercontent.com/30597493/156002012-1e4e2fe2-17d1-4be0-ae1d-2518fe0ddc03.mp4
 
 ![Screenshot](Screenshot_1646055492.png)
 ![Screenshot](Screenshot_1646055501.png)
@@ -10,6 +12,9 @@ Starbucks Redesign
 ![Screenshot](Screenshot_1646055525.png)
 ![Screenshot](Screenshot_1646055530.png)
 ![Screenshot](Screenshot_1646055953.png)
+
+
+
 
 
 
