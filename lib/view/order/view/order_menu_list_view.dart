@@ -5,6 +5,7 @@ import 'package:starbucks_redesign/core/constants/colors.dart';
 import 'package:starbucks_redesign/core/extension/padding_extension.dart';
 import 'package:starbucks_redesign/view/order/model/order_coffee_sizes_enum.dart';
 import 'package:starbucks_redesign/view/order/model/order_model.dart';
+import 'package:starbucks_redesign/view/order/view/menu_detail_view.dart';
 import 'package:starbucks_redesign/view/order/view/order_select_coffee.dart';
 import 'package:starbucks_redesign/view/order/viewmodel/order_viewmodel.dart';
 
@@ -35,10 +36,22 @@ class OrderMenuListView extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    buildMenuItemsCircularImage(index),
-                    Padding(
-                      padding: context.paddingLowAll,
-                      child: buildMenuItemInfo(index, context),
+                    Material(
+                      color: white,
+                      child: InkWell(
+                        onTap: () {
+                          Get.to(MenuDetailsView(index: index));
+                        },
+                        child: Row(
+                          children: [
+                            buildMenuItemsCircularImage(index),
+                            Padding(
+                              padding: context.paddingLowAll,
+                              child: buildMenuItemInfo(index, context),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                     Spacer(),
                     Align(

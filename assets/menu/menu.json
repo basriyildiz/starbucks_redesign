@@ -3,6 +3,7 @@
         "itemNo": 1,
         "name": "Hazelnut Coffee",
         "price": 19.95,
+        "description": "Toffee nut syrup is blended with ice and milk,then topped with whipped cream and a delicious toffee nut flavoured topping.",
         "imagePath": "assets/images/c1.png",
         "categories": [
             0,
@@ -15,6 +16,7 @@
         "itemNo": 2,
         "name": "Mocha Frappuccino",
         "price": 17.95,
+        "description": "Toffee nut syrup is blended with ice and milk,then topped with whipped cream and a delicious toffee nut flavoured topping.",
         "imagePath": "assets/images/c2.png",
         "categories": [
             0,
@@ -27,6 +29,7 @@
         "itemNo": 3,
         "name": "Espresso Frappuccino",
         "price": 21.95,
+        "description": "Toffee nut syrup is blended with ice and milk,then topped with whipped cream and a delicious toffee nut flavoured topping.",
         "imagePath": "assets/images/c3.png",
         "categories": [
             0,
@@ -38,6 +41,7 @@
         "itemNo": 4,
         "name": "Caramel Frappucino",
         "price": 17.95,
+        "description": "Toffee nut syrup is blended with ice and milk,then topped with whipped cream and a delicious toffee nut flavoured topping.",
         "imagePath": "assets/images/c4.png",
         "categories": [
             1,
@@ -49,6 +53,7 @@
         "itemNo": 5,
         "name": "Hazelnut Coffee",
         "price": 16.95,
+        "description": "Toffee nut syrup is blended with ice and milk,then topped with whipped cream and a delicious toffee nut flavoured topping.",
         "imagePath": "assets/images/c1.png",
         "categories": [
             1,
@@ -61,6 +66,7 @@
         "itemNo": 6,
         "name": "Lorem Coffee",
         "price": 14.95,
+        "description": "Toffee nut syrup is blended with ice and milk,then topped with whipped cream and a delicious toffee nut flavoured topping.",
         "imagePath": "assets/images/c1.png",
         "categories": [
             0,
@@ -73,6 +79,7 @@
         "itemNo": 7,
         "name": "Ipsum Coffee",
         "price": 12.95,
+        "description": "Toffee nut syrup is blended with ice and milk,then topped with whipped cream and a delicious toffee nut flavoured topping.",
         "imagePath": "assets/images/c1.png",
         "categories": [
             1,
@@ -85,6 +92,7 @@
         "itemNo": 8,
         "name": "Hazelnut Coffee",
         "price": 12.95,
+        "description": "Toffee nut syrup is blended with ice and milk,then topped with whipped cream and a delicious toffee nut flavoured topping.",
         "imagePath": "assets/images/c1.png",
         "categories": [
             4,

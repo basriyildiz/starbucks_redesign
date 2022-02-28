@@ -4,14 +4,10 @@ import 'package:get/get.dart';
 import 'package:starbucks_redesign/core/constants/colors.dart';
 import 'package:starbucks_redesign/core/constants/image_paths.dart';
 import 'package:starbucks_redesign/core/extension/padding_extension.dart';
-import 'package:starbucks_redesign/view/order/model/order_categories.dart';
 import 'package:starbucks_redesign/view/order/model/order_model.dart';
-import 'package:starbucks_redesign/view/order/view/order_menu_list_view.dart';
-import 'package:starbucks_redesign/view/order/view/order_category_view.dart';
-import 'package:starbucks_redesign/view/order/view/order_select_coffee.dart';
+import 'package:starbucks_redesign/view/order/view/order_completed_view.dart';
 import 'package:starbucks_redesign/view/order/viewmodel/order_viewmodel.dart';
 import 'package:starbucks_redesign/view/widgets/app_bar.dart';
-import 'package:starbucks_redesign/view/widgets/custom_buttons.dart';
 import 'package:starbucks_redesign/view/widgets/sliver_app_bar.dart';
 
 import 'order_details_view.dart';
@@ -72,6 +68,7 @@ class OrderToComplete extends StatelessWidget {
                                   ),
                                   Spacer(),
                                   Column(
+                                    crossAxisAlignment: CrossAxisAlignment.end,
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceAround,
                                     children: [
@@ -124,7 +121,7 @@ class OrderToComplete extends StatelessWidget {
                             .copyWith(color: dark),
                       ),
                       Text(
-                        "17.95",
+                        calculateCartTotal(controller).toString(),
                         style: Theme.of(context)
                             .textTheme
                             .headline4!
@@ -179,8 +176,26 @@ class OrderToComplete extends StatelessWidget {
                               color: buttonGrey,
                               borderRadius: BorderRadius.circular(20.w),
                             ),
-                            child: Column(
-                              children: [Text("DA")],
+                            child: Padding(
+                              padding: context.paddingNormalHorizontal,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text("Kredi",
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .headline5!
+                                          .copyWith(
+                                              color: dark.withOpacity(.5))),
+                                  Text("Banka Kartı",
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .headline5!
+                                          .copyWith(
+                                              color: dark.withOpacity(.5)))
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -194,11 +209,24 @@ class OrderToComplete extends StatelessWidget {
           SizedBox(
             height: 45.h,
             width: double.infinity,
-            child: ElevatedButton(onPressed: () {}, child: Text("Ödemeyi Yap")),
+            child: ElevatedButton(
+                onPressed: () {
+                  Get.to(OrderCompletedView());
+                },
+                child: Text("Ödemeyi Yap")),
           ),
         ],
       ),
     );
+  }
+
+  double calculateCartTotal(OrderViewmodel controller) {
+    double sum = 0;
+    for (var i = 0; i < controller.orders.length; i++) {
+      var model = controller.orders[i];
+      sum += model.otherInfo.price * model.number;
+    }
+    return sum;
   }
 
   Container buildMenuItemsCircularImage(OrderModelForAddToBasket model) {

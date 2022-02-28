@@ -11,6 +11,7 @@ String OrderModelToJson(List<OrderModel> data) =>
 
 class OrderModel {
   late String name;
+  late String description;
   late double price;
   late String imagePath;
   late List categories;
@@ -22,6 +23,7 @@ class OrderModel {
     required this.imagePath,
     required this.categories,
     required this.itemNo,
+    required this.description,
   });
 
   factory OrderModel.fromJson(Map<dynamic, dynamic> map) {
@@ -31,6 +33,7 @@ class OrderModel {
       imagePath: map["imagePath"],
       categories: map["categories"],
       itemNo: map["itemNo"],
+      description: map["description"],
     );
   }
 
@@ -41,6 +44,7 @@ class OrderModel {
       "imagePath": imagePath,
       "categories": categories,
       "itemNo": itemNo,
+      "description": description,
     };
   }
 }
