@@ -1,6 +1,7 @@
 # starbucks_redesign
 
-Starbucks Redesign Y
+Starbucks Redesign
+<video src='https://streamable.com/xla1ow' width=180/>
 
 ![Screenshot](Screenshot_1646055492.png)
 ![Screenshot](Screenshot_1646055501.png)
