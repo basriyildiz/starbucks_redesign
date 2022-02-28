@@ -4,8 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:starbucks_redesign/core/init/theme/panache/light_theme.dart';
 import 'package:starbucks_redesign/view/auth/login/view/login_view.dart';
-
-import 'view/auth/splash/splash_view.dart';
+import 'package:starbucks_redesign/view/auth/splash/splash_view.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
@@ -23,7 +22,7 @@ class MyApp extends StatelessWidget {
       builder: () => GetMaterialApp(
         title: 'Starbucks Redesign',
         theme: lightTheme,
-        home: LoginView(),
+        home: SplashView(),
       ),
     );
   }

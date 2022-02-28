@@ -5,6 +5,8 @@ import 'package:starbucks_redesign/core/constants/colors.dart';
 import 'package:starbucks_redesign/core/constants/icon_path.dart';
 import 'package:starbucks_redesign/core/constants/image_paths.dart';
 import 'package:starbucks_redesign/core/extension/padding_extension.dart';
+import 'package:starbucks_redesign/view/control/view/control_view.dart';
+import 'package:starbucks_redesign/view/control/viewmodel/control_viewmodel.dart';
 import 'package:starbucks_redesign/view/order/viewmodel/order_viewmodel.dart';
 import 'package:starbucks_redesign/view/widgets/app_bar.dart';
 
@@ -50,7 +52,11 @@ class OrderCompletedView extends StatelessWidget {
                   width: double.infinity,
                   height: 55.h,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      var cont = Get.find<ControlViewmodel>();
+                      cont.changeCurrentPage(0);
+                      Get.to(ControlView());
+                    },
                     child: Text("Kapat"),
                   ),
                 ),

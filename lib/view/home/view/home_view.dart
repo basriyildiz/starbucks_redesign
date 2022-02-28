@@ -8,7 +8,9 @@ import 'package:starbucks_redesign/view/widgets/app_bar.dart';
 import 'package:starbucks_redesign/view/widgets/sliver_app_bar.dart';
 
 class HomeView extends StatelessWidget {
-  const HomeView({Key? key}) : super(key: key);
+  const HomeView({Key? key, this.isVisible = false}) : super(key: key);
+
+  final bool isVisible;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

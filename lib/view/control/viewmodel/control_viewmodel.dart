@@ -10,11 +10,13 @@ class ControlViewmodel extends GetxController {
   Widget get getCurrentPage => _currentPage;
   int get getCurrentIndex => _currentIndex;
 
-  changeCurrentPage(int index) {
+  changeCurrentPage(int index, {bool isVisible = true}) {
     _currentIndex = index;
     switch (index) {
       case 0:
-        _currentPage = const HomeView();
+        _currentPage = HomeView(
+          isVisible: isVisible,
+        );
         break;
       case 1:
         _currentPage = const OrderView();
