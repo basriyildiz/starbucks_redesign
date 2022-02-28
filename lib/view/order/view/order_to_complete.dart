@@ -31,7 +31,7 @@ class OrderToComplete extends StatelessWidget {
         children: [
           Expanded(
             child: CustomScrollView(
-              physics: BouncingScrollPhysics(),
+              physics: const BouncingScrollPhysics(),
               slivers: [
                 SliverToBoxAdapter(
                   child: Column(
@@ -52,8 +52,8 @@ class OrderToComplete extends StatelessWidget {
                     return Column(
                       children: [
                         index != 0 || index != controller.orders.length - 1
-                            ? Divider()
-                            : SizedBox(),
+                            ? const Divider()
+                            : const SizedBox(),
                         Padding(
                           padding: context.paddingLowHorizontal,
                           child: SizedBox(
@@ -107,7 +107,7 @@ class OrderToComplete extends StatelessWidget {
           ),
           Padding(
             padding: context.paddingNormalHorizontal,
-            child: Divider(color: buttonGrey, thickness: 0.7),
+            child: const Divider(color: buttonGrey, thickness: 0.7),
           ),
           SizedBox(
               height: 55.h,
