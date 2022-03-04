@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       builder: () => GetMaterialApp(
         title: 'Starbucks Redesign',
+        debugShowCheckedModeBanner: false,
         theme: lightTheme,
         home: SplashView(),
       ),
