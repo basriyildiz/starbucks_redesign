@@ -1,6 +1,4 @@
-# starbucks_redesign
-
-##  Starbucks Redesign
+##  Starbucks Redesign UI With Flutter
 Design by Betul USKUDAR
 
 https://user-images.githubusercontent.com/30597493/156002012-1e4e2fe2-17d1-4be0-ae1d-2518fe0ddc03.mp4
